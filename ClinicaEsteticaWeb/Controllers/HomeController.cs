@@ -1,0 +1,3 @@
+using ClinicaEsteticaWeb.Services;using Microsoft.AspNetCore.Mvc;
+namespace ClinicaEsteticaWeb.Controllers;
+public class HomeController:Controller {private readonly Db _db;public HomeController(Db db)=>_db=db;public IActionResult Index(){using var x=_db.Open();ViewBag.Clientes=new MySqlConnector.MySqlCommand("SELECT COUNT(*) FROM cliente",x).ExecuteScalar();ViewBag.Profissionais=new MySqlConnector.MySqlCommand("SELECT COUNT(*) FROM profissional",x).ExecuteScalar();ViewBag.Procedimentos=new MySqlConnector.MySqlCommand("SELECT COUNT(*) FROM procedimento",x).ExecuteScalar();ViewBag.Agendamentos=new MySqlConnector.MySqlCommand("SELECT COUNT(*) FROM agendamento WHERE data=CURDATE() AND situacao<>'cancelado'",x).ExecuteScalar();return View();}}

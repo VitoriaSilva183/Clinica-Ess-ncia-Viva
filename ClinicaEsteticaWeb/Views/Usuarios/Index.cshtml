@@ -1,0 +1,2 @@
+@model IEnumerable<Usuario>
+<h1>Usuários</h1><a class="primary linkbtn" asp-action="Create">Novo usuário</a><table><thead><tr><th>Nome</th><th>Login</th><th>Perfil</th><th>Status</th></tr></thead><tbody>@foreach(var u in Model){<tr><td>@u.Nome</td><td>@u.Login</td><td>@u.Perfil</td><td>@u.Status</td></tr>}</tbody></table>

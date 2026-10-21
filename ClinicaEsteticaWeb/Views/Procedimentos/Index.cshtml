@@ -1,0 +1,2 @@
+@model IEnumerable<Procedimento>
+<h1>Procedimentos</h1><a class="primary linkbtn" asp-action="Create">Novo procedimento</a><table><thead><tr><th>Nome</th><th>Duração</th><th>Valor</th><th>Status</th><th></th></tr></thead><tbody>@foreach(var p in Model){<tr><td>@p.Nome</td><td>@p.DuracaoMinutos min</td><td>@p.Valor.ToString("C")</td><td>@p.Status</td><td><form asp-action="Delete" method="post" class="inline">@Html.AntiForgeryToken()<input type="hidden" name="id" value="@p.Id"><button>Excluir</button></form></td></tr>}</tbody></table>

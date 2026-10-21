@@ -1,0 +1,8 @@
+namespace ClinicaEsteticaWeb.Models;
+public class LoginViewModel { public string Login {get;set;} public string Senha {get;set;} }
+public class Cliente { public int Id {get;set;} public string Nome {get;set;} public string CPF {get;set;} public DateTime DataNascimento {get;set;} public string Telefone {get;set;} public string Email {get;set;} public string Endereco {get;set;} public string Observacoes {get;set;} public string Status {get;set;} }
+public class Profissional { public int Id {get;set;} public string Nome {get;set;} public string RegistroProfissional {get;set;} public string Especialidade {get;set;} public string Status {get;set;} }
+public class Procedimento { public int Id {get;set;} public string Nome {get;set;} public string Descricao {get;set;} public int DuracaoMinutos {get;set;} public decimal Valor {get;set;} public string Status {get;set;} }
+public class Agendamento { public int Id {get;set;} public int ClienteId {get;set;} public int ProfissionalId {get;set;} public DateTime Data {get;set;} public TimeSpan HoraInicio {get;set;} public TimeSpan HoraFim {get;set;} public string Situacao {get;set;} public decimal ValorTotal {get;set;} public string ClienteNome {get;set;} public string ProfissionalNome {get;set;} }
+public class Usuario { public int Id {get;set;} public string Nome {get;set;} public string Login {get;set;} public string Perfil {get;set;} public string Status {get;set;} public string Senha {get;set;} }
+public class AgendamentoForm { public int ClienteId {get;set;} public int ProfissionalId {get;set;} public DateTime Data {get;set;} public TimeSpan HoraInicio {get;set;} public TimeSpan HoraFim {get;set;} public string Situacao {get;set;} = "agendado"; public int[] ProcedimentosIds {get;set;} = []; }

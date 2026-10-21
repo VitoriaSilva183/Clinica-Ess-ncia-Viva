@@ -1,0 +1,2 @@
+@model Profissional
+<h1>Novo profissional</h1><form asp-action="Create" method="post" class="form">@Html.AntiForgeryToken()<div asp-validation-summary="All" class="alert"></div><label>Nome<input asp-for="Nome"></label><label>Registro profissional<input asp-for="RegistroProfissional"></label><label>Especialidade<input asp-for="Especialidade"></label><label>Status<select asp-for="Status"><option>ativo</option><option>inativo</option></select></label><button class="primary">Salvar</button> <a asp-action="Index">Cancelar</a></form>
